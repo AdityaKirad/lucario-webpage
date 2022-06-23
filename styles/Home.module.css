@@ -1,0 +1,219 @@
+@font-face {
+  font-family: Anurati;
+  src: url("../public/Anurati-Regular.otf");
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  background: #17181f;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+
+.navigationBar {
+  display: flex;
+  height: 9.23vh;
+  width: 100vw;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  height: 9.23vh;
+  width: 100vw;
+}
+
+.logo {
+  margin-left: 3vw;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.brandName {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.content {
+  display: flex;
+  height: calc(100vh - 9.23vh);
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.brandName,
+.navLinks {
+  color: #cb69c1;
+  text-decoration: none;
+  font-family: "macondo", cursive;
+}
+
+.brandName {
+  font-size: calc(30px + ( 40 - 30 ) * (( 100vw - 600px ) / ( 1200 - 600)));;
+  margin-left: 1vw;
+  font-family: Anurati;
+}
+
+.login {
+  font-family: "Macondo", cursive;
+  font-size: calc(16px + ( 24 - 16 ) * (( 100vw - 600px ) / ( 1200 - 600)));
+  background: #6c72cb;
+  border: 0.2rem solid transparent;
+  border-radius: 0.2rem 2rem;
+  margin: 1vh 0 1vh 0;
+}
+
+.login:hover {
+  background: #6c72cb;
+}
+
+.navLinks {
+  position: relative;
+  font-size: calc(16px + ( 24 - 16 ) * (( 100vw - 600px ) / ( 1200 - 600)));
+  align-self: center;
+  cursor: pointer;
+}
+
+.navItemsGroup {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1vw;
+  margin-left: auto;
+  padding: inherit;
+  column-gap: 2rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  width: 50vw;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  width: 100%;
+}
+
+.addToDiscord {
+  background: #6c72cb;
+  font-family: "macondo", cursive;
+  font-size: 1.5rem;
+  color: white;
+  border: 0.2rem solid transparent;
+  border-radius: 10rem 1rem;
+  width: 50%;
+}
+
+.addToDiscord:hover {
+  background: #6c72cb;
+}
+
+.loginWithDiscord {
+  background: #6c72cb;
+  font-family: "macondo", cursive;
+  font-size: 1.5rem;
+  color: white;
+  border: 0.2rem solid transparent;
+  border-radius: 10rem 1rem;
+  width: 50%;
+}
+
+.loginWithDiscord:hover {
+  background: #6c72cb;
+}
+
+.menuIcon {
+  margin-right: 2vw;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.dropdownMenu {
+  display: block;
+  position: absolute;
+  background: #6c72cb59;
+  backdrop-filter: blur(1vw);
+  width: 60%;
+  top: 9.23vh;
+  right: 20vw;
+}
+
+.dashboard {
+  font-size: calc(16px + ( 62 - 16 ) * (( 100vw - 320px ) / ( 1200 - 320)));
+}
+
+.shortDescription {
+  font-size: calc(18px + ( 28 - 18 ) * (( 100vw - 320px ) / ( 1200 - 320)));
+}
+
+.addToDiscord {
+  font-size: calc(16px + ( 24 - 16 ) * (( 100vw - 320px ) / ( 1200 - 320)));
+}
+
+.loginWithDiscord{
+  font-size: calc(16px + ( 24 - 16 ) * (( 100vw - 320px ) / ( 1200 - 320)));
+}
+
+.desktopDropdownIcon {
+  color: #cb69c1;
+  width: calc(28px + ( 32 - 28 ) * (( 100vw - 600px ) / ( 1200 - 600)));
+  height: calc(28px + ( 32 - 28 ) * (( 100vw - 600px ) / ( 1200 - 600)));
+}
+
+.dropdownLinks {
+  text-decoration: none;
+  color: #CB69C1;
+  font-family: 'Macondo', cursive;
+  font-size: calc(16px + ( 20 - 16 ) * (( 100vw - 600px ) / ( 1200 - 600)));;
+}
+
+.dropdownLinks:hover ~ .dropdownLinksDescription {
+  color: #cb69c1;
+}
+
+.dropdownLinksDescription {
+  text-decoration: none;
+  font-family: 'Macondo', cursive;
+  color: white;
+  font-size: calc(16px + ( 20 - 16 ) * (( 100vw - 600px ) / ( 1200 - 600)));;
+}
+
+.dropdownLinksDescription:hover {
+  color: #CB69C1;
+}
+
+@media only screen and (max-width: 480px) {
+  .description {
+    height: 60vh;
+  }
+
+  .buttons{
+    height: 20vh;
+    flex-direction: column;
+    row-gap: 1vh;
+  }
+
+  .addToDiscord{
+    width: 100%;
+  }
+
+  .loginWithDiscord{
+    width: 100%;
+  }
+}

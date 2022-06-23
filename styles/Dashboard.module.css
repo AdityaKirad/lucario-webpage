@@ -1,0 +1,76 @@
+@font-face {
+    font-family: Anurati;
+    src: url("../public/Anurati-Regular.otf");
+  }
+
+.dashboardBackground{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    background: url('../public/jonatan-pie-3l3RwQdHRHg-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navigationBar{
+    display: flex;
+    height:  9.23vh;
+    width: 100vw;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    height: 9.23vh;
+    width: 100vw;
+}
+
+.logo{
+    margin-left: 1vw;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.brandName{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.brandName,.navLinks{
+    color: white;
+    text-decoration: none;
+    font-family: 'macondo', cursive;
+}
+
+.brandName{
+    font-size: 2rem;
+    margin-left: 1vw;
+    font-family: Anurati;
+}
+
+.navLinks{
+    position: relative;
+    font-size: 1rem;
+    align-self: center;
+    cursor: pointer;
+}
+  
+.navItemsGroup{
+    display: flex;
+    flex-direction: row;
+    margin-right: 10vw;
+    margin-left: auto;
+    padding: inherit;
+    column-gap: 2rem;
+}
+
+.menuDropdown{
+    display: block;
+    position: absolute;
+    background: rgba(14, 52, 124, 0.288);
+    backdrop-filter: blur(1vw);
+    width: 20%;
+    top: 9.23vh;
+    right: 1vw;
+  }
