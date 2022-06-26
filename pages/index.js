@@ -16,6 +16,7 @@ import { useRouter } from 'next/router';
 export default function Home() {
   const theme = useTheme();
   const { data: session, status } = useSession();
+  
   const router = useRouter();
   if (status === "authenticated"){
     router.push("/dashboard")

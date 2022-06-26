@@ -85,7 +85,7 @@ const DashboardNavbar = () => {
             <Collapse in={mainMenu} timeout='auto' unmountOnExit>
                 <List className={styles.menuDropdown}>
                     <ListItem sx={{ cursor: "pointer" }}>
-                    <ListItemText onClick={() => signOut()} sx={{ textAlign: "center" }}>Log Out</ListItemText>
+                    <ListItemText onClick={() => signOut()} sx={{ textAlign: "center", color: "#cb69c1"}}>Log Out</ListItemText>
                     </ListItem>
                 </List>
             </Collapse>

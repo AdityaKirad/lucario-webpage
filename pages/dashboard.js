@@ -3,6 +3,7 @@ import React from "react";
 import { getSession } from 'next-auth/react';
 import Box from "@mui/material/Box";
 import { useRouter } from "next/router";
+import '@fontsource/macondo/400.css';
 import styles from '../styles/Dashboard.module.css';
 import DashboardNavbar from "../components/DashboardNavbar";
 
@@ -28,6 +29,7 @@ export default Dashboard;
 
 export async function getServerSideProps(context){
   const session = await getSession(context);
+  console.log(session);
   if (!session) return { redirect: { destination: '/', permanent: false }};
   return {
     props: { session },

@@ -8,7 +8,6 @@
   flex-direction: column;
   background: #17181f;
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
@@ -54,7 +53,7 @@
 }
 
 .brandName {
-  font-size: calc(30px + ( 40 - 30 ) * (( 100vw - 600px ) / ( 1200 - 600)));;
+  font-size: calc(30px + ( 40 - 30 ) * (( 100vw - 600px ) / ( 1200 - 600)));
   margin-left: 1vw;
   font-family: Anurati;
 }
