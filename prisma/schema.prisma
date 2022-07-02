@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model userswebinformation{
+  discordId    BigInt  @id @db.UnsignedBigInt
+  discordName  String? @db.VarChar(255)
+  accessToken  String? @db.VarChar(255)
+  refreshToken String? @db.VarChar(255)
+}
+
