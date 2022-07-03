@@ -8,6 +8,7 @@ import styles from '../styles/Dashboard.module.css';
 import DashboardNavbar from "../components/DashboardNavbar";
 
 const Dashboard = ({ session }) => {
+  
   return (
     <React.Fragment>
         <Head>
