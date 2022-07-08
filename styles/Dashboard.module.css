@@ -5,7 +5,7 @@
 
 .dashboardBackground{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
     background: #17181f;
@@ -73,4 +73,18 @@
     width: 20%;
     top: 9.23vh;
     right: 1vw;
-  }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10% 0 10%;
+}
+
+.selectServer {
+    color: white;
+    font-family: 'macondo', cursive;
+    font-size: calc(30px + ( 40 - 30 ) * (( 100vw - 600px ) / ( 1200 - 600)));
+    margin-top: 5vh;
+}

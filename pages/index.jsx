@@ -1,12 +1,10 @@
 import Head from 'next/head';
-import { useState } from 'react';
 import Box from '@mui/material/Box';
 import NavBar from '../components/NavBar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Grow from '@mui/material/Grow';
 import { FaDiscord } from "react-icons/fa";
-import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material';
 import { signIn, useSession } from 'next-auth/react';
 import '@fontsource/macondo/400.css';

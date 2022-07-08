@@ -22,7 +22,6 @@ const DashboardNavbar = () => {
   const [plugin, setPlugin] = useState(false);
   const [mainMenu, setMainMenu] = useState(false);
   const user = session?.user;
-  console.log(session);
   const theme = createTheme({
     breakpoints: {
       values: {
