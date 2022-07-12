@@ -1,7 +1,5 @@
 import axios from "axios";
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { Prisma } from '../../../prisma/Prisma.server';
 
 function getBotGuilds() {
     return axios.get(`${process.env.DISCORD_API_URL}/users/@me/guilds`, {
@@ -12,7 +10,7 @@ function getBotGuilds() {
 }
 
 async function getUserGuilds(id) {
-    const user = await prisma.userswebinformation.findUnique({
+    const user = await Prisma.userswebinformation.findUnique({
         where: {
             discordId: Number(id),
         },
@@ -30,9 +28,6 @@ export async function getGuildWithPermission(id) {
     const { data: userGuilds }  = await getUserGuilds(id)
     .catch((e) => {
         throw e
-    })
-    .finally(async () => {
-        await prisma.$disconnect()
     });
 
     const permissionUserGuilds = userGuilds.filter( 

@@ -1,8 +1,6 @@
 import NextAuth from 'next-auth/next';
 import DiscordProvider from 'next-auth/providers/discord';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { Prisma } from '../../../prisma/Prisma.server';
 
 const DISCORD_AUTHORIZATION_URL = "https://discord.com/api/oauth2/authorize" + 
     new URLSearchParams({
@@ -52,13 +50,13 @@ async function refreshAccessToken(token) {
 
 async function updateTokeninDatabase(discordId, discordName, accessToken, refreshToken ){
     try {
-        const existingUser = await prisma.userswebinformation.findUnique({
+        const existingUser = await Prisma.userswebinformation.findUnique({
             where: {
                 discordId: Number(discordId),
             },
         });
         if(existingUser) {
-            const existingUser = await prisma.userswebinformation.update({
+            const existingUser = await Prisma.userswebinformation.update({
                 where: {
                     discordId: Number(discordId),
                 },
@@ -72,7 +70,7 @@ async function updateTokeninDatabase(discordId, discordName, accessToken, refres
             return existingUser;
         }
         else {
-            const newUser = await prisma.userswebinformation.create({
+            const newUser = await Prisma.userswebinformation.create({
                 data: {
                     discordId: Number(discordId),
                     discordName: discordName,
@@ -131,10 +129,7 @@ export default NextAuth({
             updateTokeninDatabase(discordId, discordName, accessToken, refreshToken)
             .catch((e) => {
                 throw e
-            })
-            .finally(async () => {
-                await prisma.$disconnect()
-            })
+            });
             return session
         },
     },

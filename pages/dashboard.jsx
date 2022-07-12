@@ -3,16 +3,26 @@ import React from "react";
 import { getSession } from 'next-auth/react';
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import Paper from "@mui/material/Paper";
+import { createTheme } from "@mui/material";
 import { useRouter } from "next/router";
 import '@fontsource/macondo/400.css';
 import styles from '../styles/Dashboard.module.css';
 import DashboardNavbar from "../components/DashboardNavbar";
+import GuildCards from "../components/GuildCards";
 import { getGuildWithPermission } from "./api/discord/guilds";
 
 const Dashboard = ({ session, mutualGuilds, nonMutualGuilds }) => {
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 300,
+        sm: 600,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+      }
+    }
+  })
   return (
     <React.Fragment>
         <Head>
@@ -26,12 +36,7 @@ const Dashboard = ({ session, mutualGuilds, nonMutualGuilds }) => {
         <DashboardNavbar />
         <Box className={styles.main}>
           <Typography className={styles.selectServer}>Select A Server</Typography>
-          <Grid container spacing={2}>
-            <Grid item xs={12} lg={4} md={8}><Paper>1</Paper></Grid>
-            <Grid item xs={12} lg={4} md={8}><Paper>2</Paper></Grid>
-            <Grid item xs={12} lg={4} md={8}><Paper>3</Paper></Grid>
-            <Grid item xs={12} lg={4} md={8}><Paper>4</Paper></Grid>
-          </Grid>
+          <GuildCards mutualGuilds={mutualGuilds} nonMutualGuilds={nonMutualGuilds} />
         </Box>
       </Box>
     </React.Fragment>
