@@ -14,6 +14,7 @@ import { createTheme } from "@mui/material";
 import { useSession } from "next-auth/react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { signOut } from "next-auth/react";
+import DrawerComo from "./DrawerComo";
 import Dropdown from "./Dropdown";
 import styles from "../styles/Dashboard.module.css";
 
@@ -52,7 +53,23 @@ const DashboardNavbar = () => {
           <Link href="/">
             <a className={styles.brandName}>Lucario</a>
           </Link>
-          <Box className={styles.navItemsGroup}>
+          {
+            isMatch ?
+            <Box className={styles.navItemsGroup}>
+              <Typography sx={{ alignSelf: "center", cursor: 'pointer', display: 'inline-flex'}} onClick={() => setMainMenu(!mainMenu)}>
+                <Avatar alt='User-image' src={user.image} />
+                { mainMenu ? <KeyboardArrowUpIcon style={{ color: 'white', alignSelf: 'center', marginLeft: '1vw' }}/> : <KeyboardArrowDownIcon style={{ color: 'white', alignSelf: 'center', marginLeft: '1vw' }}/> }
+            </Typography>
+            <Collapse in={mainMenu} timeout='auto' unmountOnExit>
+                <List className={styles.menuDropdown}>
+                    <ListItem sx={{ cursor: "pointer" }}>
+                    <ListItemText onClick={() => signOut()} sx={{ textAlign: "center", color: "#cb69c1"}}>Log Out</ListItemText>
+                    </ListItem>
+                </List>
+            </Collapse>
+            <DrawerComo />
+            </Box>
+            : <Box className={styles.navItemsGroup}>
             <a
               className={styles.navLinks}
               onClick={() => setPlugin(!plugin)}
@@ -90,6 +107,7 @@ const DashboardNavbar = () => {
                 </List>
             </Collapse>
           </Box>
+          }
         </AppBar>
       </Box>
     </React.Fragment>

@@ -17,12 +17,14 @@ import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import styles from "../styles/Home.module.css";
 
 const DrawerComo = () => {
   const [plugin, setPlugin] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const { data: session, status } = useSession();
+  const user = session?.user;
   return (
     <React.Fragment>
       <IconButton
@@ -258,9 +260,10 @@ const DrawerComo = () => {
             </ListItemButton>
           </ListItem>
           <Divider />
-
-
-          <ListItem>
+          
+          {
+            (!user) ?
+            <ListItem>
             <ListItemButton
               onClick={() => signIn('discord')}
               sx={{ border: "0.1rem solid transparent", borderRadius: "0.2rem 2rem", background: "#6c72cb", "&:hover": { background: "#6c72cb" } }}
@@ -277,7 +280,8 @@ const DrawerComo = () => {
                 Login
               </ListItemText>
             </ListItemButton>
-          </ListItem>
+          </ListItem> : null
+          }
         </List>
       </Drawer>
     </React.Fragment>

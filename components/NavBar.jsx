@@ -11,13 +11,16 @@ import Typography from "@mui/material/Typography";
 import Collapse from "@mui/material/Collapse";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { createTheme } from "@mui/material";
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
+import NewWindow from 'react-new-window';
 import DrawerComo from "./DrawerComo";
 import Dropdown from "./Dropdown";
 import styles from "../styles/Home.module.css";
 
 const NavBar = () => {
   const [plugin, setPlugin] = useState(false);
+  const [popup, setPopUp] = useState(false);
+  const { data: session, status } = useSession();
   const theme = createTheme({
     breakpoints: {
       values: {
@@ -77,9 +80,12 @@ const NavBar = () => {
                 <Link href='https://discord.gg/bAEWnAxp2t' target='_blank'>
                   <a className={styles.navLinks}>Support Server</a>
                 </Link>
-                  <Button className={styles.login} color="inherit" onClick={() => signIn('discord',{modal: true})}>
+                  <Button className={styles.login} color="inherit" onClick={() => setPopUp(true)}>
                   Login <FaDiscord style={{ height: "1.5em", width: "1.5em", marginLeft: "0.5vw" }}/>
                   </Button>
+                  { popup && !session ? (
+                    <NewWindow url='/SignInPage' onUnload={() => setPopUp(false)} />
+                  ) : null }
               </Box>
             </>
           )}

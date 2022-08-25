@@ -2202,10 +2202,12 @@ __metadata:
     eslint-config-next: 12.2.2
     next: 12.2.2
     next-auth: ^4.9.0
+    nprogress: ^0.2.0
     prisma: ^4.0.0
     react: 18.2.0
     react-dom: 18.2.0
     react-icons: ^4.4.0
+    react-new-window: ^0.2.1
   languageName: unknown
   linkType: soft
 
@@ -2385,6 +2387,13 @@ __metadata:
   bin:
     next: dist/bin/next
   checksum: fb8ced6fb551c60c71a0fb8f443f0a15cd12aed0b1a21fbaba132c47863cccf7517dce8074b1572ba1f20c974d6e5329963a9c4fb89afe88fe22eb1505ba0db8
+  languageName: node
+  linkType: hard
+
+"nprogress@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "nprogress@npm:0.2.0"
+  checksum: 66b7bec5d563ecf2d1c3d2815e6d5eb74ed815eee8563e0afa63d3f185ab1b9cf2ddd97e1ded263b9995c5019d26d600320e849e50f3747984daa033744619dc
   languageName: node
   linkType: hard
 
@@ -2670,7 +2679,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -2727,6 +2736,18 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
+  languageName: node
+  linkType: hard
+
+"react-new-window@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "react-new-window@npm:0.2.1"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0
+    react-dom: ^16.0.0 || ^17.0.0
+  checksum: b35af2b84ed0201e11cf0463d9619de74268a790130ad5fc56a5006da5f787b215e27ff3482b096cf7f82c61314998a09b01ed62fb1b9466a840f8c9beb83c7e
   languageName: node
   linkType: hard
 

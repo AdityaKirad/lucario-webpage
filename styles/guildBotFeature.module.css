@@ -1,0 +1,46 @@
+@font-face {
+    font-family: Anurati;
+    src: url("../public/Anurati-Regular.otf");
+}
+
+.background {
+    display: flex;
+    flex-direction: row;
+    background: #17181f;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    color: aliceblue;
+}
+
+.sidebarBackground {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 25%;
+    background: #6c72cb59;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(16px);
+}
+
+.sidebarTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 9.23vh;
+}
+
+.logo {
+    margin-left: 1vw;
+}
+
+.brandName {
+    color: #cb69c1;
+    text-decoration: none;
+    font-size: calc(30px + ( 40 - 30 ) * (( 100vw - 600px ) / ( 1200 - 600)));
+    font-family: Anurati;
+    margin-left: 1vw;
+}

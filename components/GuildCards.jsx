@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -44,7 +45,9 @@ const GuildCards = ({ mutualGuilds, nonMutualGuilds }) => {
                               <Typography className={styles.serverRole}>Owner</Typography>
                             </Box>
                             <CardActions sx={{marginLeft: 'auto'}}>
-                            <Button variant="contained" sx={{ fontFamily: 'Macondo, cursive' }}>Go</Button>
+                              <Link href={`/dashboard/${item.id}`}>
+                                <Button variant="contained" sx={{ fontFamily: 'Macondo, cursive' }}>Go</Button>
+                              </Link>
                             </CardActions>
                           </CardContent>
                         </Card>
@@ -64,7 +67,9 @@ const GuildCards = ({ mutualGuilds, nonMutualGuilds }) => {
                               <Typography className={styles.serverRole}>Owner</Typography>
                             </Box>
                             <CardActions sx={{marginLeft: 'auto'}}>
-                            <Button variant="contained" sx={{ fontFamily: 'Macondo, cursive' }}>Go</Button>
+                              <Link href={`/dashboard/${item.id}`}>
+                                <Button variant="contained" sx={{ fontFamily: 'Macondo, cursive' }}>Go</Button>
+                              </Link>
                             </CardActions>
                           </CardContent>
                         </Card>
@@ -86,7 +91,9 @@ const GuildCards = ({ mutualGuilds, nonMutualGuilds }) => {
                               <Typography className={styles.serverRole}>Owner</Typography>
                             </Box>
                             <CardActions sx={{marginLeft: 'auto'}}>
-                            <Button variant="contained" sx={{ fontFamily: 'Macondo, cursive' }}>Go</Button>
+                              <Link href={`/dashboard/${item.id}`}>
+                                <Button variant="contained" sx={{ fontFamily: 'Macondo, cursive' }}>Go</Button>
+                              </Link>
                             </CardActions>
                           </CardContent>
                         </Card>
@@ -106,7 +113,9 @@ const GuildCards = ({ mutualGuilds, nonMutualGuilds }) => {
                               <Typography className={styles.serverRole}>Owner</Typography>
                             </Box>
                             <CardActions sx={{marginLeft: 'auto'}}>
-                              <Button variant="contained" sx={{ fontFamily: 'Macondo, cursive' }}>Go</Button>
+                              <Link href={`/dashboard/${item.id}`}>
+                                <Button variant="contained" sx={{ fontFamily: 'Macondo, cursive' }}>Go</Button>
+                              </Link>
                             </CardActions>
                           </CardContent>
                         </Card>

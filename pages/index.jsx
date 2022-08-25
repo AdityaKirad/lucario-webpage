@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import NavBar from '../components/NavBar';
 import Typography from '@mui/material/Typography';
@@ -7,18 +9,18 @@ import Grow from '@mui/material/Grow';
 import { FaDiscord } from "react-icons/fa";
 import { useTheme } from '@mui/material';
 import { signIn, useSession } from 'next-auth/react';
+import NewWindow from 'react-new-window';
 import '@fontsource/macondo/400.css';
 import styles from '../styles/Home.module.css'; 
-import { useRouter } from 'next/router';
 
 export default function Home() {
   const theme = useTheme();
-  const { data: session, status } = useSession();
-  
+  const { data: session, status } = useSession();  
   const router = useRouter();
   if (status === "authenticated"){
     router.push("/dashboard")
   }
+  const [popup, setPopUp] = useState(false);
   return (
     <>
       <Head>
@@ -44,13 +46,15 @@ export default function Home() {
               <Button className={styles.addToDiscord} color="inherit"
               href='https://discord.com/api/oauth2/authorize?client_id=961965367767470171&permissions=8&scope=bot%20applications.commands'
               target='_blank'>Add To Discord</Button>
-              <Button className={styles.loginWithDiscord} color="inherit" onClick={() => signIn('discord')}>Login <FaDiscord style={{ width: "1.5em", height: "1.5em", marginLeft: "0.5vw" }}/></Button>
+              <Button className={styles.loginWithDiscord} color="inherit" onClick={() => setPopUp(true)}>Login <FaDiscord style={{ width: "1.5em", height: "1.5em", marginLeft: "0.5vw" }}/></Button>
+              { popup && !session ? (
+                <NewWindow url='/SignInPage' onUnload={() => setPopUp(false)} />
+              ) : null }
             </Box>
           </Box>
           </Grow>
         </Box>
       </Box>
-      
     </>
   )
 }
